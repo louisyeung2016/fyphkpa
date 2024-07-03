@@ -1,0 +1,23 @@
+body {
+	background-color: white;
+	color: black;
+}
+
+.sidebar .nav-link {
+  color: #333;
+}
+
+.sidebar .nav-link .feather {
+  color: #999;
+}
+
+.sidebar .nav-link.active {
+  color: #007bff;
+}
+
+.sidebar .nav-link:hover .feather,
+.sidebar .nav-link.active .feather {
+  color: inherit;
+}
+
+
