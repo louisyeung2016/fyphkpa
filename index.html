@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Login</title>
+	<link rel="icon" type="image/x-icon" href="./favicon/index_favicon/favicon.ico">
+    <link rel="stylesheet" href="login/css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="title-text">
+        <div class="title staff"><div>Staff Login</div> <div>職員登入</div></div>
+        <div class="title admin"><p>Admin Login</p><p>管理員登入</p></div>
+      </div>
+      <div class="form-container">
+        <div class="slide-controls">
+          <input type="radio" name="slide" id="staff" checked>
+          <input type="radio" name="slide" id="admin">
+          <label for="staff" class="slide staff">Staff 職員</label>
+          <label for="admin" class="slide admin">Admin 管理員</label>
+          <div class="slider-tab"></div>
+        </div>
+        <div class="form-inner">
+          <form action="login.php" class="staff" method="POST">
+            <div class="field">
+              <input type="text" placeholder="Staff Name 職員名稱" name="staffName" required>
+            </div>
+            <div class="field">
+              <input type="password" placeholder="Password 密碼" name="Spassword" id="Spassword" required>
+            </div>
+			<label><input type="checkbox" onclick="showPassword1()"><span style="color: white;"> Show Password 顯示密碼</span></label>
+            <div class="field btn">
+              <div class="btn-layer"></div>
+              <input type="submit" name="submit" value="Login 登入">
+            </div>
+          </form>
+          <form action="login.php" class="admin" method="POST">
+            <div class="field">
+              <input type="text" placeholder="Admin Name 管理員名稱" name="adminName" required>
+            </div>
+            <div class="field">
+              <input type="password" placeholder="Password 密碼" name="Apassword" id="Apassword" required>
+            </div>
+			<label><input type="checkbox" onclick="showPassword2()"><span style="color: white;"> Show Password 顯示密碼</span></label>
+            <div class="field btn">
+              <div class="btn-layer"></div>
+              <input type="submit" name="submit" value="Login 登入">
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const loginText = document.querySelector(".title-text .staff");
+      const staffForm = document.querySelector("form.staff");
+      const staffBtn = document.querySelector("label.staff");
+      const adminBtn = document.querySelector("label.admin");
+      const adminForm = document.querySelector("form.admin");
+      adminBtn.onclick = (()=>{
+        staffForm.style.marginLeft = "-50%";
+        loginText.style.marginLeft = "-50%";
+      });
+      staffBtn.onclick = (()=>{
+        staffForm.style.marginLeft = "0%";
+        loginText.style.marginLeft = "0%";
+      });
+	  
+		function showPassword1() {
+		  var x = document.getElementById("Spassword");
+		  
+		  if (x.type === "password") {
+			x.type = "text";
+		  } else {
+			x.type = "password";
+		  }
+		  
+		}
+		
+		function showPassword2() {
+		  
+		  var y = document.getElementById("Apassword");
+		  
+		  if (y.type === "password") {
+			y.type = "text";
+		  } else {
+			y.type = "password";
+		  }
+		}
+    </script>
+
+  </body>
+</html>
